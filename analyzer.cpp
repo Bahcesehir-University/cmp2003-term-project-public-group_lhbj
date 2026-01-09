@@ -60,7 +60,7 @@ void TripAnalyzer::ingestFile(const std::string& csvPath) {
                                     t.PickupDateTime = std::stoi(temp[3].substr(11, 2));
                                     
                                     csv_data_clean[temp[1]].push_back(t);
-                                    zone_count.push_back({temp[1], static_cast<int>(sv_data_clean[temp[1]].size())});
+                                    zone_count.push_back({temp[1], static_cast<int>(csv_data_clean[temp[1]].size())});
                                     
                         }
                         
@@ -127,3 +127,4 @@ std::vector<SlotCount> TripAnalyzer::topBusySlots(int k) const {
 
             return std::vector<SlotCount> (slot_count.begin(), slot_count.begin() + max);
 }
+
